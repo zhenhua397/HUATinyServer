@@ -5,8 +5,8 @@ Pod::Spec.new do |spec|
   spec.homepage = 'https://github.com/zhenhua397/HUATinyServer'
   spec.documentation_url = 'https://github.com/zhenhua397/HUATinyServer'
 
-  spec.summary = ''
-  spec.description = ''
+  spec.summary = 'a tiny http server on device to edit json file'
+  spec.description = 'for test'
 
   spec.authors = 'zhenhua397'
   spec.source = {
