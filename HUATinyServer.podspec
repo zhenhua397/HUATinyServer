@@ -14,5 +14,8 @@ Pod::Spec.new do |spec|
     :tag => '1.0.0',
   }
 
+  spec.ios.deployment_target = '8.0'
+  spec.requires_arc = true
+
   spec.source_files = 'HUATinyServer/**/*.{m,h}'
 end
