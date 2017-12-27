@@ -17,5 +17,9 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '8.0'
   spec.requires_arc = true
 
-  spec.source_files = 'HUATinyServer/**/*.{m,h}'
+  spec.source_files = 'HUATinyServer/HUATinyServer.{h,m}'
+
+  spec.subspec 'GCDWebServer' do |cs|
+  cs.source_files = 'HUATinyServer/GCDWebServer/**/*.{h,m}'
+  end
 end
