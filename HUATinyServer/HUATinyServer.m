@@ -24,13 +24,14 @@
         
         NSString *url = request.URL.absoluteString;
         NSString *fileName = [url lastPathComponent];
-        requestFilePath = [dir stringByAppendingPathComponent:fileName];
+        NSString *filePath = [dir stringByAppendingPathComponent:fileName];
         
-        if (![[NSFileManager defaultManager] fileExistsAtPath:requestFilePath]) {
+        if (![[fileName pathExtension] isEqualToString:@"json"] || ![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
             return [GCDWebServerDataResponse responseWithHTML:@"<html><body><h1>404 Not Found</h1></body></html>"];
         }
         
         requestURL = url;
+        requestFilePath = filePath;
         NSString *oldValue = [NSString stringWithContentsOfFile:requestFilePath encoding:NSUTF8StringEncoding error:nil];
         NSString *html = [self createHTML:oldValue];
         return [GCDWebServerDataResponse responseWithHTML:html];
@@ -92,3 +93,4 @@
 }
 
 @end
+
